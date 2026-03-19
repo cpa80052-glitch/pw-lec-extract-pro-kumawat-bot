@@ -531,13 +531,13 @@ async def drm_handler(bot: Client, m: Message):
                     await prog1.delete(True)
                     await prog.delete(True)
 		    
-		    try:
-    			yt_link = upload_video(filename, name, cc)
-    			cc = f"{cc}\n\n📺 Watch on YouTube:\n{yt_link}"
-		    except Exception as e:
-    			await bot.send_message(channel_id, f"YouTube upload failed: {e}")
+		       try:
+    			  yt_link = upload_video(filename, name, cc)
+    			  cc = f"{cc}\n\n📺 Watch on YouTube:\n{yt_link}"
+		       except Exception as e:
+    			  await bot.send_message(channel_id, f"YouTube upload failed: {e}")
 
-		    await helper.send_vid(bot, m, cc, filename, vidwatermark, thumb, name, prog, channel_id)
+		       await helper.send_vid(bot, m, cc, filename, vidwatermark, thumb, name, prog, channel_id)
 
                     count += 1
                     time.sleep(3)
